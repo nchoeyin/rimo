@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../shared/components/navbar/navbar.component';
+import { FlowbiteNavbarComponent } from '../shared/components/flowbite-navbar/flowbite-navbar.component';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent],
+  imports: [FlowbiteNavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
