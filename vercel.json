@@ -7,6 +7,7 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/dist/rimo/server/server.mjs" }
-  ]
+  ],
+  "public": true
 }
 
