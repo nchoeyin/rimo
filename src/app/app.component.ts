@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import { FlowbiteService } from './shared/services/flowbite.service';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
