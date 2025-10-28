@@ -1,11 +1,27 @@
-<section class="w-[100vw] h-[100vh]">
-  <section class="w-full">
+<div class="min-h-screen flex flex-col">
+  <!-- Navbar Section -->
+  <header class="flex-shrink-0">
     <app-flowbite-navbar></app-flowbite-navbar>
-  </section>
-  <section class="w-full">
-    <router-outlet></router-outlet>
-  </section>
-  <section>
+  </header>
+  
+  <!-- Main Content Section -->
+  <main class="flex-1 flex flex-col justify-center items-center p-4 overflow-auto dark:bg-gray-900">
+    <div class="w-full max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (img of images; track img.src) {
+          <div class="flex flex-col items-center text-center">
+            <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">{{img.title}}</h3>
+            <div class="w-96 h-96 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center overflow-hidden">
+              <img [src]="img.src" [alt]="img.title" class="w-full h-full object-contain" />
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer Section -->
+  <footer class="flex-shrink-0">
     <app-flowbite-footer></app-flowbite-footer>
-  </section>
-</section>
+  </footer>
+</div>
