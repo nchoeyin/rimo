@@ -19,15 +19,17 @@ export class ThemeService {
     
     // Only access localStorage and document in browser environment
     if (isPlatformBrowser(this.platformId)) {
-      // Initialize theme from localStorage or default to dark
+      // Always default to dark theme unless user has explicitly changed it
+      // (ignores system preferences - always dark by default)
       const savedTheme = localStorage.getItem('theme') as Theme;
-      if (savedTheme) {
+      if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
         this.setTheme(savedTheme, false); // Don't save to localStorage during init
       } else {
+        // No user preference saved - always default to dark
         this.setTheme('dark', false); // Don't save to localStorage during init
       }
     } else {
-      // Server-side: default to dark theme
+      // Server-side: always default to dark theme
       this.setTheme('dark', false);
     }
   }
